@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista To-do</title>
+    <link rel="stylesheet" href="../styleEx.css">
+    <style>
+        div {
+            max-width: 500px;
+            margin: 20vh auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Lista To-do</h1>
+    </header>
+    <section class="ex">
+        <label for=""> Nome: </label>
+        <input type="text" id="nome">
+        <br><br>
+        <button onclick="Cadastrar()">Cadastrar</button>
+        <button onclick="Listar()">Listar Todos</button>
+        <button onclick="Resetar()">Resetar</button>
+
+        <p id="resultado"></p>
+
+        <label for="">Pesquisar</label>
+        <input type="text" name="" id="pesq">
+        <button onclick="Pesquisar()">Pesquisar</button>
+    </section>
+
+
+
+</body>
+<script>
+    var dadosPessoas = localStorage.getItem("dadosPessoas") // Buscando dados armazenados no localStorage
+    dadosPessoas = JSON.parse(dadosPessoas) // Converte dado string para objeto
+    if (dadosPessoas == null) // se não
+    dadosPessoas = []
+
+    function Cadastrar() {
+        var pessoa = JSON.stringify({ nome: document.getElementById("nome").value })
+        dadosPessoas.push(pessoa);
+        localStorage.setItem("dadosPessoas", JSON.stringify(dadosPessoas))
+        document.getElementById("nome").value = ""
+        Listar()
+    }
+
+    function Listar() {
+        document.getElementById("resultado").innerHTML = ""
+
+        for (var i in dadosPessoas) {
+            var pes = JSON.parse(dadosPessoas[i])
+            document.getElementById("resultado").innerHTML += pes.nome + " <br>"
+        }
+    }
+
+    function Pesquisar(){
+        var pesq = document.getElementById("pesq").value
+        var v = dadosPessoas.filter( s => s.indexOf( pesq ) !== -1 ) 
+        document.getElementById("resultado").innerHTML = ""
+
+        for (var i in v) {
+            var pes = JSON.parse(v[i])
+            document.getElementById("resultado").innerHTML += pes.nome + " <br>"
+        }
+    }
+
+    function Resetar(){
+        dadosPessoas = []
+        localStorage.setItem("dadosPessoas", JSON.stringify([dadosPessoas]))
+        document.getElementById("resultado").innerHTML = ""
+    }
+</script>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex007</title>
+    <link rel="stylesheet" href="../styleEx.css">
+    <link rel="stylesheet" href="ex007.css">
+    <script src="ex007.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Placar Eletrônico</h1>
+    </header>
+
+    <section class="ex div-placar">
+        <div>
+            <p class="nome-time">Time 1</p>
+            <p id="pt1" class="placar">0</p>
+            <button onclick="Pontos1()" class="custom-btn btn-1">Ponto</button>
+        </div>
+        <p id="x">X</p>
+        <div>
+            <p class="nome-time">Time 2</p>
+            <p id="pt2" class="placar">0</p>
+            <button onclick="Pontos2()" class="custom-btn btn-1">Ponto</button>
+        </div>
+    </section>
+<br>
+    <section class="ex div-placar">
+        <div>
+            <p class="nome-time">Time 1</p>
+            <p id="pt3" class="placar">0</p>
+            <div class="botoes">
+                <button onclick="P1_Basquete(1)" class="custom-btn btn-1">+1</button>
+                <button onclick="P1_Basquete(2)" class="custom-btn btn-1">+2</button>
+                <button onclick="P1_Basquete(3)" class="custom-btn btn-1">+3</button>
+            </div>
+        </div>
+        <p id="x">X</p>
+        <div>
+            <p class="nome-time">Time 2</p>
+            <p id="pt4" class="placar">0</p>
+            <div class="botoes">
+                <button onclick="P2_Basquete(1)" class="custom-btn btn-1">+1</button>
+                <button onclick="P2_Basquete(2)" class="custom-btn btn-1">+2</button>
+                <button onclick="P2_Basquete(3)" class="custom-btn btn-1">+3</button>
+            </div>            
+        </div>
+    </section>
+
+    <footer>
+        <h3>Sesi / Senai - Curso Desenvolvimento de Sistemas</h3>
+    </footer>
+
+</body>
+
+</html>

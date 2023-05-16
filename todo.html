@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styleEx.css">
+    <style>
+        div {
+            max-width: 500px;
+            margin: 20vh auto;
+            text-align: center;
+        }
+
+        #resultado {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Lista To-do</h1>
+    </header>
+    <section class="ex">
+        <label for=""> Tarefa: </label>
+        <input type="text" id="tarefa">
+        <input type="image" src="img/new.svg" onclick="Cadastrar()">
+        <br><br>
+
+        <button onclick="Listar()">Listar Todos</button>
+        <button onclick="Resetar()">Resetar</button>
+
+        <p id="resultado"></p>
+
+        <label for="">Pesquisar</label>
+        <input type="text" name="" id="pesq">
+        <button onclick="Pesquisar()">Pesquisar</button>
+
+    </section>
+
+
+
+</body>
+<script>
+    var dadosTarefas = localStorage.getItem("dadosTarefas") // Buscando dados armazenados no localStorage
+    dadosTarefas = JSON.parse(dadosTarefas) // Converte dado string para objeto
+    if (dadosTarefas == null) // se não
+        dadosTarefas = []
+
+    function Cadastrar() {
+        var tarefa = JSON.stringify(
+            {
+                tarefa: document.getElementById("tarefa").value,
+                feito: false
+            }
+        )
+        dadosTarefas.push(tarefa);
+        localStorage.setItem("dadosTarefas", JSON.stringify(dadosTarefas))
+        document.getElementById("tarefa").value = ""
+        Listar()
+    }
+
+    function Listar() {
+
+        document.getElementById("resultado").innerHTML = ""
+        console.log(dadosTarefas)
+        for (var i in dadosTarefas) {
+            var item = JSON.parse(dadosTarefas[i])
+            document.getElementById("resultado").innerHTML +=
+                ` <img src="img/remove.svg" onclick="removerItem(${i})"> 
+                  <img src="img/check.svg" onclick="marcarItem(${i})">
+                    ${item.tarefa}  <br>`
+        }
+    }
+
+    function Pesquisar() {
+        var pesq = document.getElementById("pesq").value
+        var v = dadosTarefas.filter(s => s.indexOf(pesq) !== -1)
+        document.getElementById("resultado").innerHTML = ""
+
+        for (var i in v) {
+            var pes = JSON.parse(v[i])
+            document.getElementById("resultado").innerHTML += pes.tarefa + " <br>"
+        }
+    }
+
+    function removerItem(item) {
+        dadosTarefas.splice(item, 1);
+        localStorage.setItem("dadosTarefas", JSON.stringify(dadosTarefas))
+        Listar()
+    }
+
+    function marcarItem(index) {
+        console.log(index)
+        var item = dadosTarefas[index]
+        dadosTarefas[index].tarefa = "123dds"
+        console.log(dadosTarefas)
+
+        //localStorage.setItem("dadosTarefas", JSON.stringify([dadosTarefas]))
+
+    }
+
+    function Resetar() {
+        dadosTarefas = []
+        localStorage.setItem("dadosTarefas", JSON.stringify([dadosTarefas]))
+        document.getElementById("resultado").innerHTML = ""
+    }
+
+</script>
+
+</html>

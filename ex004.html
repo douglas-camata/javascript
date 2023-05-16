@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex004</title>
+    <style>
+        body {
+            font: 12pt Arial;
+        }
+        button {
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Um cadastro de pessoas</h1>
+    <button onclick="Botao()">Cadastrar nova Pessoa</button>
+    <p id="resultado">Pessoas que passaram por aqui...</p>
+
+    <script>
+        function Botao() {
+            var nome = prompt('Nome da nova pessoa: ')
+            document.getElementById('resultado').innerHTML += 
+                `<br>&#x1F596; Acabei de cadastrar <strong>${nome}</strong> 
+                    no sistema.`
+        }
+    </script>
+</body>
+</html>
