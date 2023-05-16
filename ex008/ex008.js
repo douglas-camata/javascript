@@ -1,7 +1,6 @@
 
 function Calcular() {
-    debugger
-    
+        
     //Receber o nome do aluno
     var nome = document.getElementById("aluno").value
     //Receber a nota 1
@@ -26,14 +25,14 @@ function Calcular() {
         //Exibir aluno APROVADO
         document.getElementById("resultado").innerHTML = 
             `<b class="aprov">O aluno ${nome} tirou nota ${nota1} e ${nota2} sua média
-                foi ${media}  <br> <b>PASSOU DE ANO</b>
+                foi ${media} <b>PASSOU DE ANO</b> <br>
                 <img src=aprovado.svg>
             `
     } else {
         //Senão aluno REPROVADO
         document.getElementById("resultado").innerHTML = 
         `O aluno ${aluno} tirou nota ${nota1} e ${nota2} sua média
-            foi ${media}  <br> <b>NÃO PASSOU DE ANO</b>
+            foi ${media}  <b>NÃO PASSOU DE ANO</b> <br> 
             <img src=reprovado.svg>
         `
     }  

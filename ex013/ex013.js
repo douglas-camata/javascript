@@ -1,6 +1,6 @@
 function SortearMes() {
-    var mesSorteado = 4
-    var nome = "Douglas"
+    var mesSorteado = parseInt(Math.random() * 16) + 1
+    var nome = document.getElementById("nome").value
 
     switch (mesSorteado) {
         case 1:
