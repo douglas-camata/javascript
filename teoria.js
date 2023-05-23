@@ -267,11 +267,15 @@ while (alunoEntendeu == false){
 console.log ("Exercício")
 
 
+var cont = 1
+while (cont <= 5){
+    console.log (cont)
+    cont++
+}
 
-
-
-
-
+for (var cont = 1; cont <= 5; cont++){
+    console.log (cont)
+}
 
 
 //For - Laço de repetição
@@ -282,8 +286,8 @@ console.log ("Exercício")
 // manter no loop)
 // 3ª expressão i++
 // (Aqui acrescentamos na variável +1 vez)
-
-for (let i = 1; i <= 8; i++) {
+// Exibindo
+for (let i = 1; i <= 10; i++) {
     console.log(i)
 }
 
