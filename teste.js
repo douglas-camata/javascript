@@ -11,9 +11,11 @@ var usuarios = []
 var usuario = {"usuario":"Douglas", 
                 "senha":"123"}
 usuarios.push (usuario)
+
 var usuario = {"usuario":"Ricardo", 
                 "senha":"234"}
 usuarios.push (usuario)
+
 console.log (usuarios[1].senha)
 
 console.log( usuarios.indexOf(usuario) )

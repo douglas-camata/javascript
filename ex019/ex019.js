@@ -1,3 +1,5 @@
+var vidas = 0
+
 function adicionarVida() {  //Cogumelo
     vidas++
     DesenharVidas()

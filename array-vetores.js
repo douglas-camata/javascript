@@ -27,8 +27,51 @@ frutas.push ('Abacaxi')
 console.log ( frutas.length)
 console.log ( frutas )
 
-var novaListaFrutas = []
+var novaListaFrutas = []    // []  -
 novaListaFrutas.push ('Limão')
-console.log (novaListaFrutas)
+console.log (novaListaFrutas)   // ['Limão]
 novaListaFrutas.push ('Melância')
-console.log (novaListaFrutas)
+console.log (novaListaFrutas)   // ['Limão', 'Melância']
+
+novaListaFrutas[0] = 'Melão'
+console.log (novaListaFrutas)   // ['Melão', 'Melância']
+novaListaFrutas[1] = 'Banana'
+console.log (novaListaFrutas)   // ['Melão', 'Banana']
+novaListaFrutas.push ('Melância')
+console.log (novaListaFrutas)   // ['Melão', 'Banana', 'Melância']
+novaListaFrutas[3] = 'Abacate'
+console.log (novaListaFrutas)   // ['Melão', 'Banana', 'Melância', 'Abacate']
+novaListaFrutas.push ('Mamão')
+
+for (var i=0; i < frutas.length; i++) {
+    console.log ( frutas[i] )
+}
+
+// for in -> não preciso inicializar uma variável de contador do loop
+for (var pos in novaListaFrutas){
+    console.log ('novaListaFrutas[' + pos + '] ' + novaListaFrutas[pos])
+} 
+
+
+
+
+
+
+
+
+
+
+
+//Método forEach de um vetor percorre e retorna todos os elementos do vetor
+//individualmente na variavel fruta, pelo exemplo abaixo
+novaListaFrutas.forEach( fruta => {
+    console.log (fruta)
+    } 
+)
+
+
+
+
+
+
+
