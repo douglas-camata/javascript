@@ -7,11 +7,11 @@ var nomes = ['Silvia', 'Marcos', 'Sandra']
 var novoVetor = [20, 'SESI', true]
 
 //Acessando os dados de um vetor
-console.log ( nomes[1] )
-console.log ( novoVetor[1] )
+console.log ( nomes[2] )     // 'Sandra'
+console.log ( novoVetor[1] ) // 'SESI'
 
 //Verificando o atributo de tamanho do vetor
-console.log (numeros.length)
+console.log (numeros.length)   // 6
 
 //  indice      0        1       2        3       4
 var frutas = ['Maçã','Laranja','Pera','Morango','Uva']
@@ -20,6 +20,12 @@ for (var i = 0; i < frutas.length; i++) {
     // Coloco o i no indice da frutas para pegar o
     // valor de cada indice do vetor
     console.log ( frutas[i] ) 
+}
+
+// Para lermos todos os elementos de um vetor, podemos 
+// também utilizar o  -- for in -- como o exemplo abaixo
+for (var pos in frutas) {
+    console.log ( frutas[pos] ) 
 }
 
 //Adicionando novo valor no FINAL do vetor

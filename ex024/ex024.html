@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex024</title>
+    <link rel="stylesheet" href="../styleEx.css">
+    <style>
+        .img {
+            width: 150px;
+        }
+        #resultado {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Criando Lista de Filmes</h1>
+    </header>
+
+    <section class="ex">
+        <label>Nome do Filme </label>
+        <input type="text" id="nome" placeholder="Digite o nome do filme">
+        <br><br>
+        <label>Link da imagem </label>
+        <input type="text" id="imagem" placeholder="Informe link da imagem">
+        <br><br>
+        <button onclick="botaoFilmes()">Cadastrar Filme</button>
+        <button onclick="botaoIndicado()">Indicar Filme</button>
+        <button onclick="botaoLimpar()">Limpar Dados</button>
+        <div id="indicado"></div>
+        <h1>Resultado</h1>
+        <div id="resultado"></div>
+    </section>
+
+    <footer>
+        <h3>Sesi / Senai - Curso Desenvolvimento de Sistemas</h3>
+    </footer>
+    
+
+</body>
+
+<script src="ex024.js"></script>
+
+</html>

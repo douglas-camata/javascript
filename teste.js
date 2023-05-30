@@ -20,3 +20,9 @@ console.log (usuarios[1].senha)
 
 console.log( usuarios.indexOf(usuario) )
 
+
+usuarios.forEach(exibirItems)
+
+function exibirItems(el){
+    console.log (el)
+}
