@@ -10,6 +10,7 @@ exibirFilmes()
 
 //Exibindo no console a lista de filmes que carregou no vetor
 console.log(listaFilmes)
+console.log(JSON.stringify(listaFilmes));
 
 function validarCadastro(nomeFilme, imagemFilme){
     if (nomeFilme != '' && imagemFilme != '') {
@@ -30,15 +31,15 @@ function botaoFilmes() {
     }
     
     var filme = {
-        nome: nomeFilme,
-        link: imagemFilme
+        'nome': nomeFilme,
+        'link': imagemFilme
     }
     listaFilmes.push(filme)
     //Utilizando o localStorage que irá gravar o nosso vetor de filmes
     //no método setItem, preciso passar como parâmetro o nome do espaço
     //que o navegador irá reservar e passo também o vetor de filmes
     //convertido em formato JSON
-    localStorage.setItem( 'bdFilmes', JSON.stringify(listaFilmes) )
+    localStorage.setItem( 'bdFilmes', JSON.stringify(listaFilmes)) 
 
     exibirFilmes()
 
@@ -58,7 +59,9 @@ function botaoIndicado(){
 
 function exibirFilmes(){
     document.getElementById('resultado').innerHTML = ''
-
+    document.getElementById('indicado').innerHTML = ''
+    console.log(listaFilmes)
+    debugger
     for (var i in listaFilmes) {
         document.getElementById('resultado').innerHTML +=
             `<div>
