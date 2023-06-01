@@ -10,7 +10,6 @@ exibirFilmes()
 
 //Exibindo no console a lista de filmes que carregou no vetor
 console.log(listaFilmes)
-console.log(JSON.stringify(listaFilmes));
 
 function validarCadastro(nomeFilme, imagemFilme){
     if (nomeFilme != '' && imagemFilme != '') {
@@ -46,6 +45,8 @@ function botaoFilmes() {
     document.getElementById("nome").value = ''
     document.getElementById("imagem").value = ''
     document.getElementById("nome").focus()
+
+  
 }
 
 function botaoIndicado(){
@@ -61,7 +62,7 @@ function exibirFilmes(){
     document.getElementById('resultado').innerHTML = ''
     document.getElementById('indicado').innerHTML = ''
     console.log(listaFilmes)
-    debugger
+    
     for (var i in listaFilmes) {
         document.getElementById('resultado').innerHTML +=
             `<div>

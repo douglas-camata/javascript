@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex025</title>
+    <link rel="stylesheet" href="../styleEx.css">
+    <style>
+        .img {
+            width: 150px;
+        }
+        #resultado {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro de Usuário</h1>
+    </header>
+
+    <section class="ex">
+        <label>Nome </label>
+        <input type="text" id="nome" placeholder="Digite o nome do usuário">
+        <br><br>
+        <label>Usuário </label>
+        <input type="text" id="usuario" placeholder="Digite o usuário">
+        <br><br>
+        <label>Senha </label>
+        <input type="password" id="senha" placeholder="Digite a senha">
+        <br><br>
+        <label>Senha </label>
+        <input type="password" id="senha2" placeholder="Confirmar senha">
+        <br><br>
+        <button onclick="botaoCadastro()">Cadastrar Usuário</button>
+        <h1>Lista de usuários cadastrados</h1>
+        <div id="resultado">
+
+        </div>
+    </section>
+
+    <footer>
+        <h3>Sesi / Senai - Curso Desenvolvimento de Sistemas</h3>
+    </footer>
+    
+
+</body>
+
+<script src="ex025.js"></script>
+
+</html>
