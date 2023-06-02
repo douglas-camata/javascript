@@ -51,29 +51,42 @@ function botaoCadastro() {
 
 }
 
+function botaoCadastrese (){
+    location.href = 'ex025.html'
+}
+
 function exibirUsuarios(){
     document.getElementById('resultado').innerHTML = ''
     
-    for (var andar in listaUsuarios) {
+    listaUsuarios.forEach( (item, indice) => {
         document.getElementById('resultado').innerHTML +=
             `<div>
-                <p>${listaUsuarios[andar].nome} - ${listaUsuarios[andar].login}</p>
+                <b>Nome:</b> ${item.nome} - <b>Login: </b> ${item.login}
+                <img src='excluir.svg' onclick='excluirUsuario(${indice})'>
             </div>`
-    }
+    } )
+}
 
+function excluirUsuario(indice){
+    listaUsuarios.splice (indice, 1)
+    localStorage.setItem( 'bdListaUsuarios', JSON.stringify(listaUsuarios)) 
+    exibirUsuarios()
 }
 
 function botaoLogin(){
     var usuario = document.getElementById("usuario").value
     var senha = document.getElementById("senha").value
 
-    for (var andar in listaUsuarios){
-        if (usuario == listaUsuarios[andar].login && senha == listaUsuarios[andar].senha) {
-            alert (`Bem vindo ao sistema, ${listaUsuarios[andar].nome}`)
-            return true
+    var encontrou = false
+    listaUsuarios.forEach ( item => {
+        if (usuario == item.login && senha == item.senha) {
+            alert (`Bem vindo ao sistema, ${item.nome}`)
+            encontrou = true
         }
-    }
+    } )
 
-    alert('Usuário não encontrado')
+    if (encontrou == false) {
+        alert('Usuário não encontrado')
+    }   
 
 }

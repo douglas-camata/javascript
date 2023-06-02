@@ -62,6 +62,8 @@ for (var pos in novaListaFrutas){
 
 
 
+
+
 //Método forEach de um vetor percorre e retorna todos os elementos do vetor
 //individualmente na variavel fruta, pelo exemplo abaixo
 novaListaFrutas.forEach( fruta => {
