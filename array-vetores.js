@@ -52,7 +52,22 @@ for (var pos in novaListaFrutas){
     console.log ('novaListaFrutas[' + pos + '] ' + novaListaFrutas[pos])
 } 
 
+//O método forEach - significa para cada item do vetor
+//dentro do parenteses colocamos a variável que irá
+//receber o conteúdo de cada linha do vetor
+//e com o => {} informamos o bloco que irá executar para
+//cada linha
+frutas.forEach ( item => { 
+    console.log ('Item pelo forEach ', item)
+ }  )
+//Quando precisamos do índice também o colocamos entre ()
+// assim como no exemplo abaixo
+ frutas.forEach ( (item, pos) => { 
+    console.log ('Item pelo forEach com posição ', pos ,item)
+ }  )
 
+
+ 
 
 
 

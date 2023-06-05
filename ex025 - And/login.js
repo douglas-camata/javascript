@@ -17,12 +17,14 @@ function botaoEntrar() {
 }
 
 function validarUsuario(login, senha) {
-    for (var i in listaUsuarios) {
-        if (listaUsuarios[i].usuario == login && listaUsuarios[i].senha == senha) {
-            return true
+    var encontrado = false
+    //for (var i in listaUsuarios) {
+    listaUsuarios.forEach( (item, i) => {
+        if (item.usuario == login && listaUsuarios[i].senha == senha) {
+            encontrado = true
         }
-    }
-    return false
+    })
+    return encontrado
 }
 
 function botaoCadastrar() {

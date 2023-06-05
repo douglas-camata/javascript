@@ -68,9 +68,11 @@ function exibirUsuarios(){
 }
 
 function excluirUsuario(indice){
-    listaUsuarios.splice (indice, 1)
-    localStorage.setItem( 'bdListaUsuarios', JSON.stringify(listaUsuarios)) 
-    exibirUsuarios()
+    if (confirm('Deseja realmente excluir este usuário?')){
+        listaUsuarios.splice (indice, 1)
+        localStorage.setItem( 'bdListaUsuarios', JSON.stringify(listaUsuarios)) 
+        exibirUsuarios()
+    }    
 }
 
 function botaoLogin(){
