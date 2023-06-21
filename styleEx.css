@@ -16,14 +16,18 @@ header {
     margin: 0 auto;
     border-radius: 10px;
     background-color: white;
-    padding: 20px;
+    padding: 0.5rem;
     box-shadow: 5px 5px 10px black;
     text-align: center;
+}
+.ex > img {
+    max-width: 100%;
 }
 
 footer {
     text-align: center;
     color: white;
+    margin-bottom: 2rem;
 }
 
 button {

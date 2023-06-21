@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Séries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Catálogo de Séries</h1>
+    </header>
+
+    <section class="section cad">
+        <div>
+            <label>Série </label>
+            <input type="text" id="nome" placeholder="Digite o nome da série">
+        </div>
+        <div>
+            <label>Link da imagem </label>
+            <input type="text" id="imagem" placeholder="Digite link da imagem">
+        </div>        
+        <div>
+            <label>Link da GIF </label>
+            <input type="text" id="gif" placeholder="Digite link da gif">
+        </div>        
+        <div>
+            <label>Temporadas </label>
+            <input type="number" value="1" id="temporadas">
+        </div>
+        <div>
+            <label>Gênero </label>
+            <select id="categoria">
+                <option value="Romance">Romance</option>
+                <option value="Suspense">Suspense</option>
+                <option value="Comédia">Comédia</option>
+                <option value="Animação">Animação</option>
+                <option value="Ação">Ação</option>
+                <option value="Terror">Terror</option>
+                <option value="Ficção Científica">Ficção Científica</option>
+            </select>
+        </div>
+        <div>
+            <button onclick="botaoCadastrar()"><span class="text">Cadastrar Série</span></button>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div>
+            <div id="busca">
+                <p><strong>Filtrar séries por:</strong></p>
+                <label>Nome </label>
+                <input type="text" id="nomeBusca" onkeyup="filtrarSeries()" placeholder="Digite o nome da série para buscar">
+                <label>Gênero </label>
+                <select id="categoriaBusca" onchange="filtrarSeries()">
+                    <option value="">Todas categorias</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Comédia">Comédia</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Ficção Científica">Ficção Científica</option>
+                </select>
+                
+            </div>
+            <hr>
+            
+            <div id="lista" class="cards-series">
+    
+            </div>
+        </div>
+        
+
+    </section>
+
+    <section class="section">
+        <div>
+            <div id="busca">
+                Romances
+            </div>
+            <hr>
+            
+            <div id="lista-romances" class="cards-series">
+    
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div>
+            <div id="busca">
+                Suspenses
+            </div>
+            <hr>
+            
+            <div id="lista-suspenses" class="cards-series">
+    
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Sesi / Senai - Curso Desenvolvimento de Sistemas</h3>
+    </footer>
+    
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
